@@ -1,0 +1,208 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "How are you",
+        "What's up?",
+        "Good day",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Is anyone there?",
+        "Start chat",
+        "Yo",
+        "Greetings"
+      ],
+      "responses": [
+        "Hello! How can I assist you today?",
+        "Hi there, ask me anything about the university!",
+        "Greetings! What information are you looking for?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye",
+        "Have a good day",
+        "Talk to you later",
+        "I'm leaving",
+        "End chat",
+        "Exit",
+        "CU",
+        "Bye bye"
+      ],
+      "responses": [
+        "Goodbye! Have a wonderful day.",
+        "See you later! Feel free to ask more questions anytime.",
+        "Take care!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Appreciate it",
+        "Thanks a lot",
+        "Thank you so much",
+        "Appreciate the help",
+        "Thx",
+        "ty",
+        "That was great, thanks"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!",
+        "Anytime! Is there anything else I can assist with?",
+        "My pleasure!"
+      ]
+    },
+    {
+      "tag": "admissions",
+      "patterns": [
+        "How do I apply for admissions?",
+        "What are the admission requirements?",
+        "When do admissions open?",
+        "Application deadline",
+        "How to apply",
+        "Application process",
+        "Do I need an entrance exam?",
+        "What is the SAT requirement?",
+        "When is the application deadline for B.Tech?",
+        "Can I apply online?",
+        "Admission criteria",
+        "tell me about admissions"
+      ],
+      "responses": [
+        "You can apply online through our university portal. Admissions for the next semester open on December 15th.",
+        "Admission requirements vary by program. Generally, you need a high school diploma with a minimum GPA of 3.0 and SAT/ACT scores. Check the 'Admissions' page on our website for details.",
+        "The application deadline for the fall semester is July 31st."
+      ]
+    },
+    {
+      "tag": "courses",
+      "patterns": [
+        "What courses do you offer?",
+        "List of available programs",
+        "Do you have a Computer Science program?",
+        "Tell me about engineering courses",
+        "What specializations are available in B.Tech?",
+        "B.Tech programs",
+        "Can I get a course catalog?",
+        "List of majors",
+        "What is the curriculum for CSE?",
+        "tell me about the courses"
+      ],
+      "responses": [
+        "We offer a wide range of undergraduate and graduate programs, including B.Tech in Computer Science (with specializations in AI/ML and Cybersecurity), B.Tech in Mechanical Engineering, and B.Sc in Physics.",
+        "You can find a complete list of all our programs and their detailed curriculum on the 'Academics' section of the university website."
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": [
+        "What is the fee structure?",
+        "How much is the tuition fee?",
+        "Are there any scholarships?",
+        "Cost of B.Tech CSE",
+        "Tuition cost",
+        "Fees for one year",
+        "Payment options",
+        "Financial aid",
+        "Can I get a fee waiver?",
+        "How much does it cost?",
+        "Scholarship deadlines",
+        "Hostel fees"
+      ],
+      "responses": [
+        "Tuition fees are $1,500 per semester for B.Tech programs. Additional hostel fees are $500 per semester.",
+        "Yes, we offer several merit-based and need-based scholarships. The deadline to apply for scholarships is August 15th. You can find eligibility criteria on the 'Scholarships' page."
+      ]
+    },
+    {
+      "tag": "hostel",
+      "patterns": [
+        "Do you have hostel facilities?",
+        "How is the campus accommodation?",
+        "Tell me about the dorms",
+        "Dormitory rooms",
+        "Is hostel mandatory?",
+        "How to apply for hostel",
+        "What is the hostel mess like?",
+        "Campus living",
+        "Accommodation options"
+      ],
+      "responses": [
+        "Yes, we have separate on-campus hostel facilities for boys and girls with 24/7 security, Wi-Fi, and laundry services.",
+        "Our dorms are well-maintained and include options for single and shared rooms. You can find more details and apply for a room on the 'Hostel' section of our portal."
+      ]
+    },
+    {
+      "tag": "location",
+      "patterns": [
+        "Where is the university located?",
+        "What is the address?",
+        "How to get to the campus?",
+        "Location of the university",
+        "Which city are you in?",
+        "Campus address"
+      ],
+      "responses": [
+        "Our university is located at 123 University Drive, Tech City, 40001.",
+        "You can find a campus map and driving directions on the 'Contact Us' page of our website."
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": [
+        "How can I contact the admissions office?",
+        "What is the university's phone number?",
+        "Contact information",
+        "Who do I email for help?",
+        "Admissions office email",
+        "Phone number for admissions"
+      ],
+      "responses": [
+        "You can reach the admissions office at (123) 456-7890 or by email at ditniversity@edu.in",
+        "For general inquiries, please call our main office at (123) 456-7800."
+      ]
+    },
+    {
+      "tag": "events",
+      "patterns": [
+        "What are the upcoming events on campus?",
+        "Tell me about the tech fest",
+        "When is the cultural fest?",
+        "Campus events",
+        "Are there any workshops?",
+        "Guest lectures"
+      ],
+      "responses": [
+        "Our annual tech fest 'Innovate 2025' is scheduled for November 15th-17th.",
+        "You can find a full calendar of campus events, workshops, and sports meets on the 'Events' section of our website."
+      ]
+    },
+    {
+      "tag": "library",
+      "patterns": [
+        "What are the library timings?",
+        "Is the library open 24/7?",
+        "How can I issue a book?",
+        "Library facilities",
+        "Do you have a digital library?",
+        "Library hours"
+      ],
+      "responses": [
+        "The central library is open from 8:00 AM to 10:00 PM on weekdays and 10:00 AM to 6:00 PM on weekends.",
+        "Yes, we have a digital library with access to thousands of e-books and research journals. You can log in with your student ID."
+      ]
+    }
+  ]
+}
