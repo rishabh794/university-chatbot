@@ -3,6 +3,8 @@
 This is a simple, intent-based AI chatbot built for a university project. It uses a Machine Learning model (LinearSVC) trained on a custom dataset to understand and respond to user queries about admissions, courses, fees, and more.
 
 The frontend is built with Streamlit, providing a clean, real-time chat interface.
+
+
 🔗 **Live Demo:** [https://university-chatbot-dit.streamlit.app/](https://university-chatbot-dit.streamlit.app/)
 
 ---
