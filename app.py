@@ -4,12 +4,10 @@ import json
 import random
 import time
 
-# --- NLTK & Preprocessing Block ---
 import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
-# Download NLTK data (if not already downloaded by the training script)
 try:
     nltk.data.find('tokenizers/punkt')
     nltk.data.find('corpora/wordnet')
@@ -22,10 +20,8 @@ except LookupError:
     nltk.download('omw-1.4', quiet=True)
     nltk.download('punkt_tab', quiet=True)
 
-# Initialize the lemmatizer
 lemmatizer = WordNetLemmatizer()
 
-# Define the preprocessing function *exactly* as in train_model.py
 def preprocess_text(text):
     """
     Tokenizes and lemmatizes the input text.
@@ -33,7 +29,6 @@ def preprocess_text(text):
     tokens = word_tokenize(text.lower())
     lemmatized_tokens = [lemmatizer.lemmatize(token) for token in tokens]
     return lemmatized_tokens
-# --- End of NLTK Block ---
 
 
 # --- 1. Load Trained Model and Data ---
@@ -46,7 +41,6 @@ except Exception as e:
     st.error(f"Error loading models or data: {e}. Please run train_model.py first.")
     st.stop()
 
-# Create a dictionary of responses for fast lookup
 responses = {intent['tag']: intent['responses'] for intent in data['intents']}
 
 # --- 2. Create the Chatbot Logic ---
@@ -61,7 +55,6 @@ def get_response(user_input):
         response_list = responses[predicted_tag]
         bot_response = random.choice(response_list)
     except KeyError:
-        # Fallback response
         bot_response = "I'm not sure how to respond to that. Can you try rephrasing?"
         
     return bot_response, predicted_tag
@@ -72,10 +65,8 @@ def handle_suggestion(question):
     Called when a suggested question button is clicked.
     Adds the question and the bot's response to the chat history.
     """
-    # 1. Add user's suggested question to chat
     st.session_state.messages.append({"role": "user", "content": question})
     
-    # 2. Get and add bot's response
     bot_response, tag = get_response(question)
     st.session_state.messages.append({"role": "assistant", "content": bot_response, "tag": tag})
 
@@ -84,7 +75,6 @@ st.set_page_config(page_title="University Chatbot", layout="wide")
 st.title("🎓 University AI Assistant")
 st.caption("Ask me about admissions, courses, fees, or contact info.")
 
-# --- 5. NEW: Sidebar ---
 with st.sidebar:
     st.header("About")
     st.info(
@@ -100,24 +90,20 @@ with st.sidebar:
     st.markdown("`intents.json` (11 intents, 100 patterns)")
 
 
-# --- 6. Initialize and Display Chat ---
+# --- 5. Initialize and Display Chat ---
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Display prior chat messages
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-        # If it's an assistant message and has a tag, show the debug caption
         if message["role"] == "assistant" and "tag" in message:
             st.caption(f"Debug: Predicted intent = '{message['tag']}'")
 
-# --- 7. NEW: Suggested Questions (Only show if chat is empty) ---
 if not st.session_state.messages:
     st.markdown("---")
     st.subheader("Or, try one of these suggestions:")
     
-    # Use columns for a neater layout
     col1, col2, col3 = st.columns(3)
     
     with col1:
@@ -162,22 +148,18 @@ if not st.session_state.messages:
     st.markdown("---")
 
 
-# --- 8. Handle New User Input (from chat box) ---
+# --- 6. Handle New User Input (from chat box) ---
 if prompt := st.chat_input("What would you like to know?"):
     
-    # 1. Add user's message
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # 2. Get and add bot's response
-    # NEW: Use a "thinking" spinner for better UX
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
-            time.sleep(0.5) # Add a small, artificial delay
+            time.sleep(0.5) 
             bot_response, tag = get_response(prompt)
             st.markdown(bot_response)
             st.caption(f"Debug: Predicted intent = '{tag}'")
         
-    # Add the bot's response (and tag) to the session state
     st.session_state.messages.append({"role": "assistant", "content": bot_response, "tag": tag})
